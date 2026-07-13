@@ -82,7 +82,7 @@ nav ul li a:hover{
 /* Banner */
 
 .hero{
-    background-image: url("image/KV.jpg");
+    background-image: url("KV.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
