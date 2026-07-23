@@ -16,18 +16,18 @@
 
 <body>
 
-<header>
+<header id="top">
     <div class="logo">
         <h2>TVET</h2>
     </div>
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Mengenai</a></li>
-            <li><a href="#">Program</a></li>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">Mengenai</a></li>
+            <li><a href="#programs">Program</a></li>
             <li><a href="#">Video</a></li>
-            <li><a href="#">Hubungi</a></li>
+            <li><a href="#contact">Hubungi</a></li>
         </ul>
     </nav>
 </header>
@@ -48,47 +48,134 @@
 </section>
 
 <!-- Programs Section -->
-<section class="programs">
+<section class="programs" id="programs">
     <div class="container">
         <h2>Program Kami</h2>
         <div class="program-grid">
-            <div class="program-card">
-                <h3>Teknologi Informasi</h3>
-                <p>Program pelatihan dalam pengembangan software, desain web, dan administrasi jaringan.</p>
-            </div>
-            <div class="program-card">
-                <h3>Otomotif</h3>
-                <p>Pelatihan mekanik otomotif, perbaikan, dan perawatan kendaraan modern.</p>
-            </div>
-            <div class="program-card">
-                <h3>Konstruksi</h3>
-                <p>Program pelatihan dalam teknik sipil, desain bangunan, dan manajemen proyek.</p>
-            </div>
-            <div class="program-card">
-                <h3>Kelistrikan</h3>
-                <p>Pelatihan instalasi listrik, pemeliharaan, dan sistem tenaga.</p>
-            </div>
+            <a class="program-link" href="program.html?slug=pengurusan-perniagaan">
+                <div class="program-card">
+                    <h3>PENGURUSAN PERNIAGAAN</h3>
+                    <p>Asas pengurusan, keusahawanan, dan operasi perniagaan.</p>
+                </div>
+            </a>
+            <a class="program-link" href="program.html?slug=teknologi-automotif">
+                <div class="program-card">
+                    <h3>TEKNOLOGI AUTOMOTIF</h3>
+                    <p>Penyelenggaraan kenderaan, diagnosa, dan teknologi automobil moden.</p>
+                </div>
+            </a>
+            <a class="program-link" href="program.html?slug=teknologi-elektrik">
+                <div class="program-card">
+                    <h3>TEKNOLOGI ELEKTRIK</h3>
+                    <p>Instalasi elektrik, sistem kuasa, dan keselamatan elektrik.</p>
+                </div>
+            </a>
+            <a class="program-link" href="program.html?slug=teknologi-elektronik">
+                <div class="program-card">
+                    <h3>TEKNOLOGI ELEKTRONIK</h3>
+                    <p>Litar elektronik, pengujian, dan aplikasi sistem digital.</p>
+                </div>
+            </a>
+            <a class="program-link" href="program.html?slug=teknologi-kimpalan">
+                <div class="program-card">
+                    <h3>TEKNOLOGI KIMPALAN</h3>
+                    <p>Asas kimpalan, teknik fabrikasi, dan keselamatan kerja logam.</p>
+                </div>
+            </a>
+            <a class="program-link" href="program.html?slug=teknologi-maklumat">
+                <div class="program-card">
+                    <h3>TEKNOLOGI MAKLUMAT</h3>
+                    <p>Pembangunan perisian, rangkaian dan pengaturcaraan.</p>
+                </div>
+            </a>
+            <a class="program-link" href="program.html?slug=teknologi-pembinaan">
+                <div class="program-card">
+                    <h3>TEKNOLOGI PEMBINAAN</h3>
+                    <p>Reka bentuk pembinaan, pengurusan projek dan teknik binaan.</p>
+                </div>
+            </a>
+            <a class="program-link" href="program.html?slug=teknologi-pemesinan-industri">
+                <div class="program-card">
+                    <h3>TEKNOLOGI PEMESINAN INDUSTRI</h3>
+                    <p>Pengoperasian mesin, CNC, dan pemesinan tepat untuk industri.</p>
+                </div>
+            </a>
+            <a class="program-link" href="program.html?slug=teknologi-penyejukan-penyaman-udara">
+                <div class="program-card">
+                    <h3>TEKNOLOGI PENYEJUKAN DAN PENYAMANAN UDARA</h3>
+                    <p>HVAC, penyelenggaraan sistem penyejukan dan penyaman udara.</p>
+                </div>
+            </a>
         </div>
     </div>
 </section>
 
+<!-- Analisis Hypermedia Section -->
+<section class="hypermedia" id="hypermedia">
+    <div class="container">
+        <h2>Analisis Hypermedia</h2>
+        <p class="hypermedia-desc">Terokai sumber penting TVET melalui video, maklumat program, takwim, aduan, dan laluan pengajian.</p>
+        <div class="hypermedia-grid">
+            <div class="hypermedia-card">
+                <h3>VIDEO TVET</h3>
+                <p>Tonton video pengenalan dan galeri multimedia untuk memahami pengalaman TVET.</p>
+                <div class="card-cta"><a class="hypermedia-cta" href="hypermedia.html?slug=video-tvet">Buka</a></div>
+            </div>
+            <div class="hypermedia-card">
+                <h3>TVET</h3>
+                <p>Ketahui lebih lanjut mengenai misi, objektif, dan peranan TVET dalam pembentukan kerjaya.</p>
+                <div class="card-cta"><a class="hypermedia-cta" href="hypermedia.html?slug=tvet">Buka</a></div>
+            </div>
+            <div class="hypermedia-card">
+                <h3>TAKWIM</h3>
+                <p>Dapatkan tarikh penting, sesi pendaftaran dan aktiviti akademik untuk pelajar TVET.</p>
+                <div class="card-cta"><a class="hypermedia-cta" href="hypermedia.html?slug=takwim">Buka</a></div>
+            </div>
+            <div class="hypermedia-card">
+                <h3>LALUAN PENGAJIAN</h3>
+                <p>Terokai laluan kerjaya dan program lanjutan yang boleh diikuti selepas TVET.</p>
+                <div class="card-cta"><a class="hypermedia-cta" href="hypermedia.html?slug=laluan-pengajian">Buka</a></div>
+            </div>
+            <div class="hypermedia-card">
+                <h3>KERJAYA</h3>
+                <p>Temui peluang kerjaya yang terbuka untuk graduan TVET dan arah pengajian yang menjanjikan.</p>
+                <div class="card-cta"><a class="hypermedia-cta" href="detail.html?slug=kerjaya">Buka</a></div>
+            </div>
+            <div class="hypermedia-card">
+                <h3>KEMUDAHAN</h3>
+                <p>Kenali kemudahan pembelajaran kami seperti bengkel, makmal, dan ruang latihan terkini.</p>
+                <div class="card-cta"><a class="hypermedia-cta" href="detail.html?slug=kemudahan">Buka</a></div>
+            </div>
+            <div class="hypermedia-card">
+                <h3>KONVOKESYEN</h3>
+                <p>Sambut kejayaan graduan TVET dalam majlis konvokesyen yang menghargai pencapaian dan pengiktirafan.</p>
+                <div class="card-cta"><a class="hypermedia-cta" href="./konvokesyen.html">Buka</a></div>
+            </div>
+            <div class="hypermedia-card">
+                <h3>ADUAN</h3>
+                <p>Lapor isu atau maklum balas dengan cepat untuk meningkatkan kualiti perkhidmatan.</p>
+                <div class="card-cta"><a class="hypermedia-cta" href="hypermedia.html?slug=aduan">Buka</a></div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Contact Section -->
-<section class="contact">
+<section class="contact" id="contact">
     <div class="container">
         <h2>Hubungi Kami</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <h3>Informasi Kontak</h3>
-                <p><strong>Alamat:</strong> Jalan Pendidikan No. 123, Kota</p>
-                <p><strong>Telepon:</strong> +60 XX-XXXX-XXXX</p>
-                <p><strong>Email:</strong> info@tvet.edu.my</p>
-                <p><strong>Jam Operasional:</strong> Senin - Jumat, 08:00 - 17:00</p>
+                <h3>Contact Information</h3>
+                <p><strong>Alamat:</strong> JALAN STADIUM, KOMPLEKS PENDIDIKAN JALAN STADIUM, 05100 ALOR SETAR, KEDAH</p>
+                <p><strong>Telepon:</strong>04-7333363</p>
+                <p><strong>Email:</strong> kha2001@moe.edu.my</p>
+                <p><strong>Jam Operasi:</strong> Ahad - Khamis, 08:00 - 17:00 @ 15:00 </p>
             </div>
             <form class="contact-form">
                 <input type="text" placeholder="Nama Anda" required>
                 <input type="email" placeholder="Email Anda" required>
                 <textarea placeholder="Pesan Anda" rows="5" required></textarea>
-                <button type="submit" class="btn">Kirim Pesan</button>
+                <button type="submit" class="btn">Hantar</button>
             </form>
         </div>
     </div>

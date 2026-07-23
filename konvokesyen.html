@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konvokesyen</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-shell {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #eef5fb 0%, #f7f9fd 100%);
+            padding: 80px 20px 60px;
+        }
+        .page-shell .container {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+        .page-hero {
+            background: linear-gradient(135deg, #0B3C8A 0%, #143d6a 100%);
+            border-radius: 32px;
+            color: #fff;
+            padding: 46px 38px;
+            box-shadow: 0 28px 64px rgba(11, 60, 138, 0.16);
+            margin-bottom: 36px;
+        }
+        .page-hero .badge {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 12px;
+            background: rgba(255,255,255,0.18);
+            color: #dbe8ff;
+            padding: 10px 18px;
+            border-radius: 999px;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+        .page-hero h1 {
+            color: #ffffff;
+            font-size: 40px;
+            margin-bottom: 18px;
+            line-height: 1.05;
+        }
+        .page-hero p {
+            color: rgba(255,255,255,0.92);
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 780px;
+            margin: 0 auto 30px;
+        }
+        .year-cards {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+        .year-card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 18px 48px rgba(15, 44, 89, 0.08);
+            border: 1px solid rgba(11, 60, 138, 0.10);
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .year-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 58px rgba(15, 44, 89, 0.12);
+        }
+        .year-card-header {
+            padding: 32px 28px 22px;
+            background: linear-gradient(135deg, #0B3C8A 0%, #234b8f 100%);
+            color: #fff;
+        }
+        .year-card-header h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .year-card-header span {
+            display: inline-block;
+            margin-top: 6px;
+            color: rgba(255,255,255,0.86);
+            font-size: 14px;
+        }
+        .year-card-body {
+            padding: 28px;
+        }
+        .year-card-body p {
+            color: #4d5f7a;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+        .year-card-body a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            background: #0B3C8A;
+            color: #fff;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .year-card-body a:hover {
+            background: #08426b;
+            transform: translateY(-1px);
+        }
+        .note-panel {
+            margin-top: 32px;
+            background: #ffffff;
+            padding: 26px 28px;
+            border-radius: 24px;
+            border: 1px solid #dbe4f4;
+            color: #4d5f7a;
+        }
+        .note-panel h3 {
+            margin-bottom: 12px;
+            color: #0B3C8A;
+        }
+        .note-panel p { margin-bottom: 12px; }
+        .note-panel ul { margin-left: 18px; list-style: disc; }
+        .note-panel li { margin-bottom: 10px; }
+        @media (max-width: 780px) {
+            .page-hero { padding: 30px 24px; }
+            .year-card-body { padding: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <section class="page-shell">
+        <div class="container">
+            <div class="page-hero">
+                <span class="badge">Konvokesyen TVET</span>
+                <h1>Pilih Tahun Konvokesyen</h1>
+                <p>Pilih antara Konvokesyen 2024 dan Konvokesyen 2025 untuk melihat setiap pautan video rasmi. Halaman ini direka bagi membolehkan anda mengakses sesi majlis graduasi dengan lebih cepat dan menarik.</p>
+            </div>
+            <div class="year-cards">
+                <article class="year-card">
+                    <div class="year-card-header">
+                        <h2>Konvokesyen 2024</h2>
+                        <span>Majlis Konvokesyen Ke-9</span>
+                    </div>
+                    <div class="year-card-body">
+                        <p>Lihat pautan semua 11 sidang video rasmi untuk Konvokesyen 2024. Sesuai untuk pelajar, ibu bapa dan pihak industri yang ingin menyaksikan acara penuh graduasi TVET.</p>
+                        <a href="konvokesyen-2024.html">Buka Konvokesyen 2024</a>
+                    </div>
+                </article>
+                <article class="year-card">
+                    <div class="year-card-header">
+                        <h2>Konvokesyen 2025</h2>
+                        <span>Majlis Konvokesyen Ke-10</span>
+                    </div>
+                    <div class="year-card-body">
+                        <p>Akses pautan 17 sidang rasmi bagi Konvokesyen 2025 Zon Semenanjung. Sesuai untuk menonton siri penuh majlis graduasi TVET tahun ini.</p>
+                        <a href="konvokesyen-2025.html">Buka Konvokesyen 2025</a>
+                    </div>
+                </article>
+            </div>
+            <div class="note-panel">
+                <h3>Nota</h3>
+                <p>Kedua-dua halaman menyediakan video rasmi YouTube untuk setiap sidang konvokesyen. Klik salah satu tahun untuk melihat semua pautan dengan antara muka yang ringkas dan menarik.</p>
+                <ul>
+                    <li>Satu halaman khusus untuk setiap tahun.</li>
+                    <li>Pautan video rasmi disusun mengikut sidang.</li>
+                    <li>Reka bentuk responsif untuk paparan mudah alih dan desktop.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

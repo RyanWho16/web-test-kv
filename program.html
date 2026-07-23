@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Program</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .program-page{
+            min-height:100vh;
+            padding:240px 20px 60px;
+            position:relative;
+            background-color:#f5f5f5;
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            display:flex;
+            align-items:flex-end;
+        }
+        .program-page::before{
+            content:'';
+            position:absolute;
+            inset:0;
+            background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.96) 55%);
+            pointer-events:none;
+        }
+        .program-content{
+            position:relative;
+            z-index:1;
+            width:100%;
+            max-width:1100px;
+            margin:0 auto;
+        }
+        .program-panel{
+            background:rgba(255,255,255,0.96);
+            backdrop-filter:blur(10px);
+            border-radius:24px;
+            padding:40px 30px;
+            box-shadow:0 24px 60px rgba(0,0,0,0.12);
+        }
+        .program-page h2{color:#0B3C8A;font-size:40px;margin-bottom:20px;text-align:left}
+        .program-page h3{color:#0B3C8A;margin-top:28px;margin-bottom:12px;text-align:left}
+        .program-page .desc,
+        .program-page p,
+        .program-page ul,
+        .program-page li{color:#333;font-size:16px;line-height:1.8;text-align:left}
+        .program-page ul{padding-left:20px;margin:0}
+        .program-page li{margin-bottom:10px}
+        .back-link{display:inline-block;margin-top:20px;color:#F7931E;text-decoration:none;font-weight:bold}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><h2>TVET</h2></div>
+        </div>
+    </header>
+
+    <section class="program-page" id="program-page">
+        <div class="program-content container">
+            <div class="program-panel">
+                <h2 id="program-title">Program</h2>
+                <p id="program-desc" class="desc"></p>
+
+                <h3>Gambaran Keseluruhan</h3>
+                <p id="program-overview" class="desc"></p>
+
+                <h3>Modul Utama</h3>
+                <ul id="program-curriculum"></ul>
+
+                <h3>Tempoh Pengajian</h3>
+                <p id="program-duration"></p>
+
+                <h3>Syarat Kemasukan</h3>
+                <p id="program-entry"></p>
+
+                <h3>Peluang Pekerjaan</h3>
+                <p id="program-career"></p>
+
+                <a class="back-link" href="index.html">&larr; Kembali ke Program</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const data = {
+            "pengurusan-perniagaan":{
+                title:"PENGURUSAN PERNIAGAAN",
+                desc:"Mempelajari asas pengurusan perniagaan, pemasaran, kewangan, keusahawanan serta kemahiran mengurus operasi dan perniagaan secara profesional.",
+                overview:"Program ini membekalkan pengetahuan dalam pengurusan harian perniagaan, perakaunan asas, pemasaran, dan kemahiran pelanggan.",
+                curriculum:["Asas Perakaunan","Prinsip Pengurusan","Pemasaran & Jualan","Perkhidmatan Pelanggan","Keusahawanan"],
+                duration:"6 - 12 bulan (bergantung pada modul)",
+                entry:"Sijil PMR / SKM tahap 1 atau pengalaman kerja berkaitan.",
+                career:"Pembantu Pentadbiran, Juruwang, Pembantu Pemasaran, Usahawan kecil." ,
+                image:"image/pengurusan-perniagaan.jpg"
+            },
+            "teknologi-automotif":{
+                title:"TEKNOLOGI AUTOMOTIF",
+                desc:"Mempelajari diagnosis, penyelenggaraan dan pembaikan enjin serta sistem kenderaan moden.",
+                overview:"Meliputi sistem enjin, transmisi, brek, sistem elektronik kereta dan diagnostik menggunakan alat moden.",
+                curriculum:["Sistem Enjin","Elektrik & Elektronik Automotif","Sistem Brek & Suspensi","Diagnostik Komputer"],
+                duration:"9 - 18 bulan",
+                entry:"Minima SPM atau sijil SKM berkaitan.",
+                career:"Teknisi Automotif, Juruteknik Diagnostik, Penyelia Bengkel.",
+                image:"image/teknologi-automotif.jpg"
+            },
+            "teknologi-elektrik":{
+                title:"TEKNOLOGI ELEKTRIK",
+                desc:"Mempelajari pemasangan pendawaian elektrik, penyelenggaraan peralatan elektrik dan sistem kawalan.",
+                overview:"Fokus pada pemasangan kabel, panel kawalan, sistem tenaga dan standard keselamatan elektrik.",
+                curriculum:["Asas Elektrik","Pengawalan Motor","Panel & Kawalan","Keselamatan Elektrik"],
+                duration:"6 - 12 bulan",
+                entry:"SPM atau SKM tahap 1-2.",
+                career:"Juruelektrik, Pembantu Juruteknik, Jurutera Lapangan (dengan lanjutan).",
+                image:"image/teknologi-elektrik.jpg"
+            },
+            "teknologi-elektronik":{
+                title:"TEKNOLOGI ELEKTRONIK",
+                desc:"Mempelajari litar elektronik, pemasangan komponen, pengujian serta pembaikan peralatan elektronik.",
+                overview:"Pelajar akan belajar litar analog & digital, mikropengawal, dan peralatan ujian.",
+                curriculum:["Litar Analog","Litar Digital","Mikropengawal","Penyelenggaraan Peralatan"],
+                duration:"6 - 12 bulan",
+                entry:"SPM atau pengalaman teknikal.",
+                career:"Teknisi Elektronik, Juruteknik Ujian & Pembaikan.",
+                image:"image/teknologi-elektronik.jpg"
+            },
+            "teknologi-kimpalan":{
+                title:"TEKNOLOGI KIMPALAN",
+                desc:"Mempelajari teknik kimpalan, pemotongan logam, fabrikasi serta penggunaan peralatan kimpalan mengikut piawaian keselamatan industri.",
+                overview:"Mempelajari teknik kimpalan MIG, TIG, SMAW dan keselamatan kerja serta bahan logam.",
+                curriculum:["Pengenalan Kimpalan","Teknik MIG & TIG","Fabrikasi & Penyediaan Bahan","Keselamatan Industri"],
+                duration:"6 - 12 bulan",
+                entry:"Keutamaan kepada pelajar dengan minat praktikal.",
+                career:"Welder, Fabricator, Operator Kimpalan.",
+                image:"image/teknologi-kimpalan.jpg"
+            },
+            "teknologi-maklumat":{
+                title:"TEKNOLOGI MAKLUMAT",
+                desc:"Mempelajari pemasangan komputer, konfigurasi rangkaian, penyelenggaraan sistem dan keselamatan rangkaian.",
+                overview:"Modul merangkumi pengaturcaraan, pembangunan web, pengurusan rangkaian dan asas keselamatan." ,
+                curriculum:["Asas Pengaturcaraan","Pembangunan Web","Rangkaian Komputer","Keselamatan Siber Asas"],
+                duration:"6 - 12 bulan",
+                entry:"SPM atau pengalaman IT asas.",
+                career:"Pembantu IT, Web Developer Junior, Penyelia Rangkaian.",
+                image:"image/teknologi-maklumat.jpg"
+            },
+            "teknologi-pembinaan":{
+                title:"TEKNOLOGI PEMBINAAN",
+                desc:"Mempelajari lukisan pelan bangunan, anggaran kos pembinaan dan pengurusan projek.",
+                overview:"Pelajar mempelajari asas reka bentuk, bahan binaan, pengurusan tapak dan keselamatan binaan.",
+                curriculum:["Bahan Binaan","Teknik Pembinaan","Pengurusan Projek","Keselamatan Tapak"],
+                duration:"9 - 18 bulan",
+                entry:"SPM atau pengalaman kerja tapak binaan.",
+                career:"Pembantu Tapak, Penyelia Tapak, Teknologi Pembinaan.",
+                image:"image/teknologi-pembinaan.jpg"
+            },
+            "teknologi-pemesinan-industri":{
+                title:"TEKNOLOGI PEMESINAN INDUSTRI",
+                desc:"Mempelajari pengendalian mesin, pemotongan logam serta menghasilkan komponen mengikut spesifikasi.",
+                overview:"Modul termasuk pemesinan manual, program CNC, lukisan teknikal dan kualiti produk.",
+                curriculum:["Pemesinan Manual","Program CNC","Lukisan Teknikal","Keselamatan Industri"],
+                duration:"9 - 18 bulan",
+                entry:"SPM atau SKM berkaitan.",
+                career:"Operator CNC, Machinist, Penyelia Kilang.",
+                image:"image/teknologi-pemesinan-industri.jpg"
+            },
+            "teknologi-penyejukan-penyaman-udara":{
+                title:"TEKNOLOGI PENYEJUKAN DAN PENYAMANAN UDARA",
+                desc:"Mempelajari pemasangan, penyelenggaraan dan pembaikan sistem penyaman udara serta penyejukbekuan.",
+                overview:"Pelajar belajar prinsip termodinamik, sistem HVAC, pemasangan dan penyelenggaraan sistem sejuk & penyaman udara.",
+                curriculum:["Asas HVAC","Sistem Penyejukan","Pemasangan & Servis","Keselamatan & Peraturan"],
+                duration:"6 - 12 bulan",
+                entry:"SPM / SKM atau pengalaman teknikal.",
+                career:"Teknisi HVAC, Juruteknik Penyelenggaraan, Kontraktor HVAC.",
+                image:"image/teknologi-penyejukan-penyaman-udara.jpg"
+            }
+        };
+
+        const params = new URLSearchParams(location.search);
+        const slug = params.get('slug');
+
+        const titleEl = document.getElementById('program-title');
+        const descEl = document.getElementById('program-desc');
+        const overviewEl = document.getElementById('program-overview');
+        const curriculumEl = document.getElementById('program-curriculum');
+        const durationEl = document.getElementById('program-duration');
+        const entryEl = document.getElementById('program-entry');
+        const careerEl = document.getElementById('program-career');
+        const pageEl = document.getElementById('program-page');
+
+        function setContent(item){
+            titleEl.textContent = item.title;
+            descEl.textContent = item.desc;
+            overviewEl.textContent = item.overview;
+            durationEl.textContent = item.duration;
+            entryEl.textContent = item.entry;
+            careerEl.textContent = item.career;
+            curriculumEl.innerHTML = '';
+            item.curriculum.forEach(c => {
+                const li = document.createElement('li'); li.textContent = c; curriculumEl.appendChild(li);
+            });
+
+            if(item.image){
+                pageEl.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.15), rgba(255,255,255,0.95)), url('${item.image}')`;
+            }
+        }
+
+        if(slug && data[slug]){
+            setContent(data[slug]);
+        } else {
+            titleEl.textContent = 'Program Tidak Dikenali';
+            descEl.textContent = 'Program yang anda minta tidak ditemui. Sila kembali dan pilih program lain.';
+        }
+
+        // images are loaded from the `image/` folder by filename; no in-browser upload.
+    </script>
+</body>
+</html>
