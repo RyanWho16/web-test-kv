@@ -21,7 +21,7 @@
             content:'';
             position:absolute;
             inset:0;
-            background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.96) 55%);
+            background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(15, 23, 42, 0.96) 55%);
             pointer-events:none;
         }
         .program-content{
@@ -38,6 +38,18 @@
             padding:40px 30px;
             box-shadow:0 24px 60px rgba(0,0,0,0.12);
         }
+        /* new two-column layout inside the panel */
+        .panel-grid{display:grid;grid-template-columns:1fr 320px;gap:30px;align-items:start}
+        .panel-main{min-width:0}
+        .panel-side{display:flex;align-items:flex-start;justify-content:center}
+        /* rectangular photo card */
+        .circle-photo{width:320px;height:200px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);box-shadow:0 18px 40px rgba(0,0,0,0.12);background:linear-gradient(180deg, rgba(59,130,246,0.06), rgba(139,92,246,0.04));display:block}
+        .circle-photo img{width:100%;height:100%;object-fit:cover;display:block}
+        @media(max-width:900px){.panel-grid{grid-template-columns:1fr}.panel-side{justify-content:flex-start}.circle-photo{width:240px;height:160px}}
+        /* center header title on program page header */
+        header > .container { display:flex; justify-content:center; }
+        header .logo { width:100%; justify-content:center }
+        header .logo h2{text-align:center;margin:0;padding:12px 0}
         .program-page h2{color:#0B3C8A;font-size:40px;margin-bottom:20px;text-align:left}
         .program-page h3{color:#0B3C8A;margin-top:28px;margin-bottom:12px;text-align:left}
         .program-page .desc,
@@ -46,38 +58,47 @@
         .program-page li{color:#333;font-size:16px;line-height:1.8;text-align:left}
         .program-page ul{padding-left:20px;margin:0}
         .program-page li{margin-bottom:10px}
-        .back-link{display:inline-block;margin-top:20px;color:#F7931E;text-decoration:none;font-weight:bold}
+        .back-link{display:inline-block;margin-top:20px;color:#025aff;text-decoration:none;font-weight:bold}
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo"><h2>TVET</h2></div>
+            <div class="logo"><h2>TVET MERUBAH MASA DEPAN</h2></div>
         </div>
     </header>
 
     <section class="program-page" id="program-page">
         <div class="program-content container">
             <div class="program-panel">
-                <h2 id="program-title">Program</h2>
-                <p id="program-desc" class="desc"></p>
+                <div class="panel-grid">
+                    <div class="panel-main">
+                        <h2 id="program-title">Program</h2>
+                        <p id="program-desc" class="desc"></p>
 
-                <h3>Gambaran Keseluruhan</h3>
-                <p id="program-overview" class="desc"></p>
+                        <h3>Gambaran Keseluruhan</h3>
+                        <p id="program-overview" class="desc"></p>
 
-                <h3>Modul Utama</h3>
-                <ul id="program-curriculum"></ul>
+                        <h3>Modul Utama</h3>
+                        <ul id="program-curriculum"></ul>
 
-                <h3>Tempoh Pengajian</h3>
-                <p id="program-duration"></p>
+                        <h3>Tempoh Pengajian</h3>
+                        <p id="program-duration"></p>
 
-                <h3>Syarat Kemasukan</h3>
-                <p id="program-entry"></p>
+                        <h3>Syarat Kemasukan</h3>
+                        <p id="program-entry"></p>
 
-                <h3>Peluang Pekerjaan</h3>
-                <p id="program-career"></p>
+                        <h3>Peluang Pekerjaan</h3>
+                        <p id="program-career"></p>
 
-                <a class="back-link" href="index.html">&larr; Kembali ke Program</a>
+                        <a class="back-link" href="index.html">&larr; Kembali ke Program</a>
+                    </div>
+                    <div class="panel-side">
+                        <div class="circle-photo" id="photo-wrap">
+                            <img id="program-photo" src="image/placeholder.svg" alt="Program image">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -92,7 +113,7 @@
                 duration:"6 - 12 bulan (bergantung pada modul)",
                 entry:"Sijil PMR / SKM tahap 1 atau pengalaman kerja berkaitan.",
                 career:"Pembantu Pentadbiran, Juruwang, Pembantu Pemasaran, Usahawan kecil." ,
-                image:"image/pengurusan-perniagaan.jpg"
+                image:"image/Perniagaan.jpeg"
             },
             "teknologi-automotif":{
                 title:"TEKNOLOGI AUTOMOTIF",
@@ -102,7 +123,7 @@
                 duration:"9 - 18 bulan",
                 entry:"Minima SPM atau sijil SKM berkaitan.",
                 career:"Teknisi Automotif, Juruteknik Diagnostik, Penyelia Bengkel.",
-                image:"image/teknologi-automotif.jpg"
+                image:"image/Auto.jpeg"
             },
             "teknologi-elektrik":{
                 title:"TEKNOLOGI ELEKTRIK",
@@ -112,7 +133,7 @@
                 duration:"6 - 12 bulan",
                 entry:"SPM atau SKM tahap 1-2.",
                 career:"Juruelektrik, Pembantu Juruteknik, Jurutera Lapangan (dengan lanjutan).",
-                image:"image/teknologi-elektrik.jpg"
+                image:"image/teknologi elektrik.jpeg"
             },
             "teknologi-elektronik":{
                 title:"TEKNOLOGI ELEKTRONIK",
@@ -122,7 +143,7 @@
                 duration:"6 - 12 bulan",
                 entry:"SPM atau pengalaman teknikal.",
                 career:"Teknisi Elektronik, Juruteknik Ujian & Pembaikan.",
-                image:"image/teknologi-elektronik.jpg"
+                image:"image/Elektronik.jpeg"
             },
             "teknologi-kimpalan":{
                 title:"TEKNOLOGI KIMPALAN",
@@ -132,7 +153,7 @@
                 duration:"6 - 12 bulan",
                 entry:"Keutamaan kepada pelajar dengan minat praktikal.",
                 career:"Welder, Fabricator, Operator Kimpalan.",
-                image:"image/teknologi-kimpalan.jpg"
+                image:"image/Kimpalan.jpeg"
             },
             "teknologi-maklumat":{
                 title:"TEKNOLOGI MAKLUMAT",
@@ -142,7 +163,7 @@
                 duration:"6 - 12 bulan",
                 entry:"SPM atau pengalaman IT asas.",
                 career:"Pembantu IT, Web Developer Junior, Penyelia Rangkaian.",
-                image:"image/teknologi-maklumat.jpg"
+                image:"image/Skr.jpeg"
             },
             "teknologi-pembinaan":{
                 title:"TEKNOLOGI PEMBINAAN",
@@ -152,7 +173,7 @@
                 duration:"9 - 18 bulan",
                 entry:"SPM atau pengalaman kerja tapak binaan.",
                 career:"Pembantu Tapak, Penyelia Tapak, Teknologi Pembinaan.",
-                image:"image/teknologi-pembinaan.jpg"
+                image:"image/Pembinaan.jpeg"
             },
             "teknologi-pemesinan-industri":{
                 title:"TEKNOLOGI PEMESINAN INDUSTRI",
@@ -162,7 +183,7 @@
                 duration:"9 - 18 bulan",
                 entry:"SPM atau SKM berkaitan.",
                 career:"Operator CNC, Machinist, Penyelia Kilang.",
-                image:"image/teknologi-pemesinan-industri.jpg"
+                image:"image/Mesin.jpeg"
             },
             "teknologi-penyejukan-penyaman-udara":{
                 title:"TEKNOLOGI PENYEJUKAN DAN PENYAMANAN UDARA",
@@ -172,7 +193,7 @@
                 duration:"6 - 12 bulan",
                 entry:"SPM / SKM atau pengalaman teknikal.",
                 career:"Teknisi HVAC, Juruteknik Penyelenggaraan, Kontraktor HVAC.",
-                image:"image/teknologi-penyejukan-penyaman-udara.jpg"
+                image:"image/Aircond.jpeg"
             }
         };
 
@@ -200,8 +221,16 @@
                 const li = document.createElement('li'); li.textContent = c; curriculumEl.appendChild(li);
             });
 
+            // set background image for the page and the circular photo
             if(item.image){
                 pageEl.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.15), rgba(255,255,255,0.95)), url('${item.image}')`;
+                const progImg = document.getElementById('program-photo');
+                if(progImg) progImg.src = item.image;
+                const wrap = document.getElementById('photo-wrap');
+                if(wrap) wrap.style.display = '';
+            } else {
+                const wrap = document.getElementById('photo-wrap');
+                if(wrap) wrap.style.display = 'none';
             }
         }
 
