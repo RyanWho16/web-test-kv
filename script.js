@@ -1,5 +1,53 @@
+// Background Music Setup (No Autoplay)
+function initializeBackgroundMusic() {
+    const audioElement = document.querySelector('audio');
+    if (audioElement) {
+        audioElement.volume = 0.4; // Set volume to 40%
+    }
+}
+
+// Music Toggle Button
+function setupMusicToggle() {
+    const musicBtn = document.getElementById('musicToggleBtn');
+    const audioElement = document.querySelector('audio');
+    
+    if (musicBtn && audioElement) {
+        musicBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent triggering other click handlers
+            if (audioElement.paused) {
+                audioElement.play();
+                musicBtn.textContent = '🔊 Music';
+                musicBtn.classList.remove('paused');
+            } else {
+                audioElement.pause();
+                musicBtn.textContent = '🔇 Music Off';
+                musicBtn.classList.add('paused');
+            }
+        });
+    }
+}
+
+// Button Click Sound Effect - Play on ANY click
+function addButtonClickSound() {
+    document.addEventListener('click', function(e) {
+        // Exclude music toggle button
+        if (e.target.id !== 'musicToggleBtn' && !e.target.closest('#musicToggleBtn')) {
+            try {
+                const clickSound = new Audio('sound/click.mp3');
+                clickSound.volume = 0.5;
+                clickSound.play();
+            } catch (error) {
+                // Silently fail
+            }
+        }
+    }, false);
+}
+
 // IntersectionObserver to reveal elements with the `fade-part` class
 document.addEventListener('DOMContentLoaded', function () {
+    initializeBackgroundMusic();
+    setupMusicToggle();
+    addButtonClickSound();
     // Auto-mark common divider elements to fade (so no HTML edits required)
     const dividerSelectors = ['hr', '.section-sep', '.divider-line'];
     dividerSelectors.forEach(sel => {

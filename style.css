@@ -61,7 +61,7 @@ header {
     z-index: 20;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1rem;
     padding: 14px 16px 10px;
     backdrop-filter: blur(22px);
@@ -73,6 +73,24 @@ header {
     display: flex;
     align-items: center;
     gap: 16px;
+    flex-shrink: 0;
+}
+
+header nav {
+    margin-left: auto;
+}
+
+.music-toggle-btn {
+    background: var(--button);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 0.9rem;
+    flex-shrink: 0;
 }
 
 .header-logo {
@@ -81,16 +99,19 @@ header {
     height: 40px;
     object-fit: contain;
 }
+}
 
-.logo-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(180deg, var(--primary), var(--accent));
-    color: white;
-    font-weight: 800;
+.music-toggle-btn:hover {
+    background: var(--button-hover);
+    transform: scale(1.05);
+}
+
+.music-toggle-btn.paused {
+    background: var(--muted);
+}
+
+.music-toggle-btn.paused:hover {
+    background: #64748b;
 }
 
 .logo p {
