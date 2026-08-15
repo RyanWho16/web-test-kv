@@ -35,7 +35,7 @@ function addButtonClickSound() {
         // Exclude music toggle button
         if (e.target.id !== 'musicToggleBtn' && !e.target.closest('#musicToggleBtn')) {
             try {
-                const clickSound = new Audio('sound/click.mp3');
+                const clickSound = new Audio('click.mp3');
                 clickSound.volume = 0.5;
                 clickSound.play();
             } catch (error) {
