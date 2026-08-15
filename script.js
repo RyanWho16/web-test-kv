@@ -4,7 +4,7 @@
 function addButtonClickSound() {
     document.addEventListener('click', function(e) {
         try {
-            const clickSound = new Audio('sound/click.mp3');
+            const clickSound = new Audio('click.mp3');
             clickSound.volume = 0.5;
             clickSound.play();
         } catch (error) {
